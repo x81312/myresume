@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link href="/fontawesome-free-5.14.0-web/css/all.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .more {
+      background: #ede9de;
+    }
+
+    .container {
+      margin-left: 625px;
+      width: 300px;
+    }
+
+    .swing div {
+      border-radius: 50%;
+      float: left;
+      height: 1.5em;
+      width: 1.5em;
+    }
+
+    .swing div:nth-of-type(1) {
+      background: -webkit-linear-gradient(left, #385c78 0%, #325774 100%);
+      background: linear-gradient(to right, #385c78 0%, #325774 100%);
+    }
+
+    .swing div:nth-of-type(2) {
+      background: -webkit-linear-gradient(left, #325774 0%, #47536a 100%);
+      background: linear-gradient(to right, #325774 0%, #47536a 100%);
+    }
+
+    .swing div:nth-of-type(3) {
+      background: -webkit-linear-gradient(left, #4a5369 0%, #6b4d59 100%);
+      background: linear-gradient(to right, #4a5369 0%, #6b4d59 100%);
+    }
+
+    .swing div:nth-of-type(4) {
+      background: -webkit-linear-gradient(left, #744c55 0%, #954646 100%);
+      background: linear-gradient(to right, #744c55 0%, #954646 100%);
+    }
+
+    .swing div:nth-of-type(5) {
+      background: -webkit-linear-gradient(left, #9c4543 0%, #bb4034 100%);
+      background: linear-gradient(to right, #9c4543 0%, #bb4034 100%);
+    }
+
+    .swing div:nth-of-type(6) {
+      background: -webkit-linear-gradient(left, #c33f31 0%, #d83b27 100%);
+      background: linear-gradient(to right, #c33f31 0%, #d83b27 100%);
+    }
+
+    .swing div:nth-of-type(7) {
+      background: -webkit-linear-gradient(left, #da3b26 0%, #db412c 100%);
+      background: linear-gradient(to right, #da3b26 0%, #db412c 100%);
+    }
+
+    @-webkit-keyframes ball-l {
+      0%,
+      50% {
+        -webkit-transform: rotate(0) translateX(0);
+        transform: rotate(0) translateX(0);
+      }
+
+      100% {
+        -webkit-transform: rotate(50deg) translateX(-2.5em);
+        transform: rotate(50deg) translateX(-2.5em);
+      }
+    }
+
+    @keyframes ball-l {
+      0%,
+      50% {
+        -webkit-transform: rotate(0) translate(0);
+        transform: rotate(0) translateX(0);
+      }
+
+      100% {
+        -webkit-transform: rotate(50deg) translateX(-2.5em);
+        transform: rotate(50deg) translateX(-2.5em);
+      }
+    }
+
+    @-webkit-keyframes ball-r {
+      0% {
+        -webkit-transform: rotate(-50deg) translateX(2.5em);
+        transform: rotate(-50deg) translateX(2.5em);
+      }
+
+      50%,
+      100% {
+        -webkit-transform: rotate(0) translateX(0);
+        transform: rotate(0) translateX(0);
+      }
+    }
+
+    @keyframes ball-r {
+      0% {
+        -webkit-transform: rotate(-50deg) translateX(2.5em);
+        transform: rotate(-50deg) translateX(2.5em);
+      }
+
+      50%,
+      100% {
+        -webkit-transform: rotate(0) translateX(0);
+        transform: rotate(0) translateX(0);
+      }
+    }
+
+    .swing-l {
+      -webkit-animation: ball-l 0.425s ease-in-out infinite alternate;
+      animation: ball-l 0.425s ease-in-out infinite alternate;
+    }
+
+    .swing-r {
+      -webkit-animation: ball-r 0.425s ease-in-out infinite alternate;
+      animation: ball-r 0.425s ease-in-out infinite alternate;
+    }
+
+    .shadow-l {
+      -webkit-animation: shadow-l-n 0.425s ease-in-out infinite alternate;
+      animation: shadow-l-n 0.425s ease-in-out infinite alternate;
+    }
+
+    .shadow-r {
+      -webkit-animation: shadow-r-n 0.425s ease-in-out infinite alternate;
+      animation: shadow-r-n 0.425s ease-in-out infinite alternate;
+    }
+
+    body {
+      margin: 0px 250px;
+      font-family: "Noto Sans TC", sans-serif;
+    }
+
+    header {
+      width: 100%;
+      height: 40vh;
+      background: linear-gradient(
+        270deg,
+        rgba(128, 128, 128, 0.192),
+        rgba(0, 0, 0, 0.438)
+      );
+      border-radius: 25px 25px;
+      padding-top: 20px;
+      text-align: center;
+      background-image: url(/images/banner-1071799_1280.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+
+    .wrap {
+      display: flex;
+      min-height: 470px;
+    }
+
+    main {
+      width: 50%;
+      /* background-color: rgb(144, 151, 151); */
+      border-radius: 25px 25px;
+      overflow: hidden;
+      text-align: center;
+      transition: 0.5s;
+      background-color: black;
+    }
+
+    main:hover {
+      background-color: rgba(13, 214, 170, 0.247);
+    }
+
+    aside {
+      text-align: center;
+      width: 50%;
+      /* background-color: rgb(144, 151, 151); */
+      border-radius: 25px 25px;
+      overflow: hidden;
+      transition: 0.5s;
+      background-color: black;
+    }
+
+    aside:hover {
+      background-color: rgba(13, 214, 170, 0.247);
+    }
+
+    footer {
+      width: 100%;
+      height: 5.5vh;
+
+      border-radius: 20px;
+      /* background: linear-gradient(to right, rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.671)); */
+      background-color: rgba(0, 0, 0, 0.863);
+    }
+
+    .circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      top: 20px;
+      left: calc(50% - 75px);
+      margin: 0px auto;
+    }
+
+    .circle img {
+      width: 100%;
+    }
+
+    h3 {
+      margin: 20px auto;
+      font-size: 25px;
+      text-align: center;
+    }
+
+    h4 {
+      font-size: 20px;
+      margin: 13 auto;
+      transition: 0.5s;
+    }
+
+    .logopart {
+      margin: 0 auto;
+      width: 400px;
+      letter-spacing: 25px;
+    }
+
+    .logo {
+      width: 30px;
+      height: 30px;
+    }
+
+    .box {
+      width: 100%;
+      height: 200px;
+      background-color: rgba(255, 255, 255, 0.712);
+      text-align: left;
+      padding-left: 10px;
+    }
+
+    .box2 {
+      width: 100%;
+      height: 200px;
+      background-color: rgba(255, 255, 255, 0.712);
+      text-align: left;
+      padding-left: 10px;
+    }
+
+    .topic {
+      font-size: 22px;
+
+      width: 40%;
+      left: 63%;
+      top: 50%;
+      position: absolute;
+
+      text-shadow: 1px 1px rgb(200, 200, 200), 1px 2px rgb(120, 120, 120),
+        2px 2px rgb(80, 80, 80);
+    }
+
+    .topic:hover {
+      text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.664);
+    }
+
+    hr {
+      margin: 0px;
+    }
+
+    .more {
+      width: 100%;
+      height: 100%;
+      opacity: 0.7;
+      transform: translateX(-10px);
+    }
+  </style>
+
+  <body>
+    <header>
+      <figure class="circle">
+        <img src="/images/myphoto.jpg" />
+      </figure>
+      <h3>江前毅 Chad</h3>
+      <div class="logopart">
+        <a href="#####"><img class="logo" src="/PNG/user.png" /></a>
+        <a
+          href="https://www.facebook.com/profile.php?id=1232311477"
+          target="_blank"
+          ><img class="logo" src="/PNG/fb.png"
+        /></a>
+
+        <a href="https://www.instagram.com/chad_chiang/" target="_blank"
+          ><img class="logo" src="/PNG/ig.png"
+        /></a>
+        <a
+          href="https://www.linkedin.com/in/chad-chiang-53a95215a/"
+          target="_blank"
+          ><img class="logo" src="/PNG/linkedin.png"
+        /></a>
+
+        <a href="https://line.me/ti/p/7HAxKaQFSK" target="_blank"
+          ><img class="logo" src="/PNG/iconfinder_Line_A_104829.png"
+        /></a>
+      </div>
+      <h4 class="email">x81312@gmail.com</h4>
+      <h4 class="topic">再多一點努力，就多一點成功。</h4>
+    </header>
+    <div class="wrap">
+      <aside>
+        About me
+        <div class="box">
+          <h4
+            style="
+              font-size: larger;
+              color: rgba(167, 37, 65, 0.842);
+              margin: 0;
+            "
+          >
+            Introduction
+          </h4>
+          <p style="margin: 0 auto; word-break: keep-all; line-height: 25px">
+            心地溫暖，感情豐富的雙魚座，直覺力強、適應力強，重視團隊合作，工作幾年後於2020年7月決定轉換跑道。目前於資策會進修前端工程師養成課程，隨著課程內容的吸收，自己對周遭事物的敏銳度大幅提升，也對於細節的要求越來越高，對網頁前端產生興趣，並固定閱讀科技新聞，與時俱進。平時興趣為健身、潛水、唱歌及品酒等。
+          </p>
+        </div>
+        <hr />
+        <div class="box">
+          <h4
+            style="
+              font-size: larger;
+              color: rgba(167, 37, 65, 0.842);
+              margin: 0;
+            "
+          >
+            About future
+          </h4>
+          <p style="margin: 0 auto; word-break: keep-all; line-height: 25px">
+            期許自己能利用進修期間所學習的專業知識及技能在職場上發揮，並持續精進自我，除了專業能力以外，也積極培養第二專長及增進外語能力，讓未來的路上能夠不受環境影響而遭淘汰。
+          </p>
+        </div>
+        <hr />
+        <div class="box">
+          <img class="more" src="/images/keyboard-1385706_1920.jpg" />
+          <h4
+            style="
+              font-size: larger;
+              color: rgba(167, 37, 65, 0.842);
+              margin: 0;
+            "
+          >
+            Graphics
+          </h4>
+        </div>
+      </aside>
+
+      <main class="information2">
+        Information
+        <div class="box">
+          <h4
+            style="
+              font-size: larger;
+              color: rgba(167, 37, 65, 0.842);
+              margin: 0;
+            "
+          >
+            Education
+          </h4>
+          <p>國立虎尾科技大學 自動化工程系<br />2011.9~2014.8</p>
+          <p>基隆市私立二信高級中學 機械科<br />2009.8~2011.9</p>
+        </div>
+        <hr />
+        <div class="box">
+          <h4
+            style="
+              font-size: larger;
+              color: rgba(167, 37, 65, 0.842);
+              margin: 0;
+            "
+          >
+            Work experient
+          </h4>
+          <p>詮特科技股份有限公司 設備維修及技術工程師<br />2016.4~2020.4</p>
+          <p>友通資訊股份有限公司 硬體研發工程師<br />2015.12~2016.4</p>
+        </div>
+        <hr />
+        <div class="box">
+          <h4
+            style="
+              font-size: larger;
+              color: rgba(167, 37, 65, 0.842);
+              margin: 0;
+            "
+          >
+            Certificates
+          </h4>
+          <p>TOEIC 520、全民英檢初級</p>
+          <p>Inventor 丙級</p>
+          <p>機械專業人才 丙級</p>
+        </div>
+      </main>
+
+      <aside class="skill">
+        Skills
+        <div class="box2" style="position: relative">
+          <div style="position: absolute; left: 15%; top: 18%">
+            <img
+              src="/PNG/iconfinder_10-html5_104494.png"
+              style="width: 40px; height: 40px"
+            />
+          </div>
+
+          <div style="position: absolute; left: 15%; top: 40%">
+            <img
+              src="/PNG/iconfinder_css3_icon_291788.png"
+              style="width: 40px; height: 40px"
+            />
+          </div>
+
+          <h4
+            style="
+              font-size: larger;
+              color: rgba(167, 37, 65, 0.842);
+              margin: 0;
+            "
+          >
+            Front-End
+          </h4>
+          <p>HTML5</p>
+          <p>CSS3</p>
+          <p>Javascript</p>
+          <p>jQuery</p>
+        </div>
+        <hr />
+        <div class="box2" style="position: relative">
+          <div style="position: absolute; left: 20%; top: 18%">
+            <img
+              src="/PNG/iconfinder_3_Xd_Adobe_logo_logos_4373817.png"
+              style="width: 35px; height: 35px"
+            />
+          </div>
+
+          <h4
+            style="
+              font-size: larger;
+              color: rgba(167, 37, 65, 0.842);
+              margin: 0;
+            "
+          >
+            UI UX
+          </h4>
+          <p>Adobe XD</p>
+        </div>
+        <hr />
+        <div class="box2" style="position: relative">
+          <div style="position: absolute; left: 32%; top: 16%">
+            <img
+              src="/PNG/iconfinder_11_Illustrator_Adobe_Ai_logo_logos_4373824.png"
+              style="width: 34px; height: 34px"
+            />
+          </div>
+
+          <div style="position: absolute; left: 33%; top: 38%">
+            <img
+              src="/PNG/iconfinder_Photoshop_B_104816.png"
+              style="width: 40px; height: 40px"
+            />
+          </div>
+
+          <h4
+            style="
+              font-size: larger;
+              color: rgba(167, 37, 65, 0.842);
+              margin: 0;
+            "
+          >
+            Graphics
+          </h4>
+          <p>Adobe Illustrator</p>
+          <p>Adobe Photoshop</p>
+        </div>
+      </aside>
+    </div>
+    <footer>
+      <div
+        aria-busy="true"
+        aria-label="Loading"
+        role="progressbar"
+        class="container"
+      >
+        <div class="swing">
+          <div class="swing-l"></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div class="swing-r"></div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
